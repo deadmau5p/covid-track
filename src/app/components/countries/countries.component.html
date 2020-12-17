@@ -1,0 +1,55 @@
+<div class="front-page">
+    <h1>
+        Covid-19 tracker
+    </h1>
+    <hr>
+    <div>
+        
+        <div >
+            <div class="select">
+                <label for="c">
+                    Select country :
+                </label>
+                <select id="c" #input (change)="changeCountry(input.value)">
+                    <option value="{{con}}" *ngFor="let con of countries">
+                        {{con}}
+                    </option>
+                </select>
+            </div>
+            
+        </div>
+        <app-dashboard-con [country]="country" [totalActive]="totalActive" [totalRecovered]="totalRecovered" 
+        [totalDeaths]="totalDeaths" [totalConfirmed]="totalConfirmed" *ngIf="country !== ''"></app-dashboard-con>
+
+        <div>
+            <div *ngIf="country !== ''">
+                <div class="graf">
+                    <google-chart  [data]="lineChart"></google-chart>
+                </div>
+                <div class="row">
+                    <table class="table" >
+                  
+                        <tr class="row">
+                            <th>
+                                Sno.
+                            </th>
+                            <th>Date</th>
+                            <th>Case</th>
+                        </tr>
+                    
+                    
+                        <tr class="row" *ngFor="let cs of selectedCountryData; index as i">
+                            <td>{{i + 1}}</td>
+                            <td>{{cs.date | date}}</td>
+                            <td>{{cs.cases}}</td>
+                        </tr>
+                    
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        
+
+    </div>
+</div>

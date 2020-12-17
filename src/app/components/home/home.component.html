@@ -1,0 +1,61 @@
+<div class="front-page">
+    <h1>Corona Covid-19 Tracker Country Wice</h1>
+    <hr>
+    <ul class="stat">
+        <li>
+            <p>Active:</p>
+            <div class="box">
+                {{totalActive}}
+            </div>
+            
+
+        </li>
+        <li>
+            <p>Confirmed:</p>
+            <div class="box">
+                {{totalConfirmed}}    
+            </div>
+            
+        </li>
+        <li>
+            <p>Recovered:</p>
+            <div class="box">
+                {{totalRecovered}}
+            </div>
+        </li>
+        <li>
+            <p>Deaths:</p>
+            <div class="box">
+                {{totalDeaths}}
+            </div>
+            
+        </li>
+    </ul>
+    <form class="types">
+        <div>
+            <input type="radio" id="confirmed" name="type" value="confirmed" checked>
+        <label for="confirmed">Confirmed</label><br>
+        </div>
+        <div>
+            <input type="radio" id="active" name="type" value="active">
+            <label for="active">Active</label><br>
+        </div>
+        <div>
+            <input type="radio" id="deaths" name="type" value="deaths">
+            <label for="deaths">Deaths</label><br>
+        </div>
+        <div>
+            <input type="radio" id="recovered" name="type" value="recovered">
+        <label for="recovered">Recovered</label><br>
+        </div>
+        
+        
+    </form>
+
+    
+      
+    <div>
+        <google-chart *ngIf="pieChart.dataTable !== undefined" [data]="pieChart"></google-chart>
+    </div>
+
+</div>

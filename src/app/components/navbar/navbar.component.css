@@ -1,0 +1,31 @@
+
+li 
+{
+    display: inline-block;
+    width: 40px;
+    margin: 10px;
+    padding: 10px;
+    min-width: fit-content;
+    
+
+}
+ul:first-child
+{
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+li:hover, li:active, li:focus
+{
+    
+    border-radius: 5px;
+}
+.navbar
+{
+    border-bottom:1px solid #888888;
+}
+
+a
+{
+    text-decoration: none;
+}
